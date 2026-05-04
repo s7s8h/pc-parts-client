@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Parts Hub - Edit Part</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>PC Parts Hub</h2>
+        <div>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="add-part.html" class="nav-link">Add Part</a>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <main class="form-container">
+        <h1>Edit PC Part</h1>
+        <p>Update an existing PC part using the protected API endpoint.</p>
+
+        <form id="editPartForm">
+            <label>Part Name</label>
+            <input type="text" id="partName" required>
+
+            <label>Category</label>
+            <select id="category" required>
+                <option value="">Select category</option>
+                <option value="CPU">CPU</option>
+                <option value="GPU">GPU</option>
+                <option value="RAM">RAM</option>
+                <option value="Storage">Storage</option>
+                <option value="Motherboard">Motherboard</option>
+                <option value="Power Supply">Power Supply</option>
+                <option value="Case">Case</option>
+                <option value="Cooling">Cooling</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+
+            <label>Brand</label>
+            <input type="text" id="brand" required>
+
+            <label>Price</label>
+            <input type="number" id="price" required>
+
+            <label>Specification</label>
+            <textarea id="specification" rows="4" required></textarea>
+
+            <label>Description</label>
+            <textarea id="description" rows="4"></textarea>
+
+            <label>Rating</label>
+            <input type="number" id="rating" min="0" max="5" step="0.1">
+
+            <label>Warranty</label>
+            <input type="text" id="warranty">
+
+            <label>Stock</label>
+            <input type="number" id="stock" required>
+
+            <label>Image URL</label>
+            <input type="text" id="imageUrl" placeholder="Optional">
+
+            <button type="submit">Update Part</button>
+        </form>
+
+        <p id="editMessage"></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

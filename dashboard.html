@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Parts Hub - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <h2>PC Parts Hub</h2>
+    <div>
+        <span id="welcomeUser"></span>
+        <a href="login.html" class="nav-link" id="loginLink">Login</a>
+        <a href="add-part.html" class="nav-link" id="addPartLink">Add Part</a>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+</nav>
+    <main class="container">
+        <h1>PC Parts Dashboard</h1>
+        <p class="subtitle">All PC parts retrieved from the RESTful API</p>
+
+        <div class="filter-box">
+    <button onclick="loadParts()">All Parts</button>
+    <button onclick="loadPartsByCategory('CPU')">CPU</button>
+    <button onclick="loadPartsByCategory('GPU')">GPU</button>
+    <button onclick="loadPartsByCategory('RAM')">RAM</button>
+    <button onclick="loadPartsByCategory('Storage')">Storage</button>
+    <button onclick="loadPartsByCategory('Motherboard')">Motherboard</button>
+    <button onclick="loadPartsByCategory('Power Supply')">Power Supply</button>
+    <button onclick="loadPartsByCategory('Case')">Case</button>
+    <button onclick="loadPartsByCategory('Cooling')">Cooling</button>
+    <button onclick="loadPartsByCategory('Accessories')">Accessories</button>
+</div>
+<div class="sort-box">
+    <label>Sort by:</label>
+    <select id="sortSelect" onchange="sortCurrentParts()">
+        <option value="default">Default</option>
+        <option value="priceLowHigh">Price: Low to High</option>
+        <option value="priceHighLow">Price: High to Low</option>
+        <option value="ratingHighLow">Rating: High to Low</option>
+    </select>
+</div>
+<div class="search-box">
+    <label>Search:</label>
+    <input type="text" id="searchInput" placeholder="Search by name, brand, or category" oninput="searchParts()">
+</div>
+        <p id="statusMessage"></p>
+<div id="detailsBox" class="details-box" style="display: none;"></div>
+        <div id="partsContainer" class="parts-grid"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
